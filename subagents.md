@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/banner.svg" alt="Claude Code チートシート — Subagents" width="100%">
+  <img src="images/banner.ja.svg" alt="Claude Code チートシート — Subagents" width="100%">
 </p>
 
 <h1 align="center">🤖 Subagents</h1>
