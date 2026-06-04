@@ -1,0 +1,114 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Claude Code 意思決定フローチャート — どのモードを使う">
+  <defs>
+    <linearGradient id="fBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#201E1A"/>
+      <stop offset="0.6" stop-color="#181612"/>
+      <stop offset="1" stop-color="#121110"/>
+    </linearGradient>
+    <radialGradient id="fGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="820" fill="url(#fBg)"/>
+  <circle cx="1000" cy="60" r="300" fill="url(#fGlow)"/>
+
+  <path transform="translate(80,62)" d="M0,-19 C2.6,-2.6 2.6,-2.6 19,0 C2.6,2.6 2.6,2.6 0,19 C-2.6,2.6 -2.6,2.6 -19,0 C-2.6,-2.6 -2.6,-2.6 0,-19 Z" fill="#D97757"/>
+  <text x="112" y="56" font-family="'Helvetica Neue','Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif" font-size="32" font-weight="800" letter-spacing="-0.5"><tspan fill="#F4EFE8">どのモードを使う？</tspan></text>
+  <text x="114" y="88" font-family="'Helvetica Neue','Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif" font-size="16" fill="#A99F94">タスクに合うモード・モデル・effort を、上から順に選ぶだけ。</text>
+
+  <!-- trunk (no) -->
+  <g stroke="#7E7468" stroke-width="2">
+    <line x1="249" y1="190" x2="249" y2="231"/>
+    <line x1="249" y1="302" x2="249" y2="343"/>
+    <line x1="249" y1="414" x2="249" y2="455"/>
+    <line x1="249" y1="526" x2="249" y2="567"/>
+    <line x1="249" y1="638" x2="249" y2="679"/>
+  </g>
+  <g fill="#7E7468">
+    <path d="M249,240 L244,231 L254,231 Z"/>
+    <path d="M249,352 L244,343 L254,343 Z"/>
+    <path d="M249,464 L244,455 L254,455 Z"/>
+    <path d="M249,576 L244,567 L254,567 Z"/>
+    <path d="M249,688 L244,679 L254,679 Z"/>
+  </g>
+  <g font-family="'Helvetica Neue','Hiragino Sans','Yu Gothic',sans-serif" font-size="11" fill="#8A8073" font-weight="600">
+    <text x="258" y="219">いいえ ↓</text>
+    <text x="258" y="331">いいえ ↓</text>
+    <text x="258" y="443">いいえ ↓</text>
+    <text x="258" y="555">いいえ ↓</text>
+    <text x="258" y="667">いいえ ↓</text>
+  </g>
+
+  <!-- branch (yes) -->
+  <g stroke="#D97757" stroke-width="2">
+    <line x1="434" y1="159" x2="612" y2="159"/>
+    <line x1="434" y1="271" x2="612" y2="271"/>
+    <line x1="434" y1="383" x2="612" y2="383"/>
+    <line x1="434" y1="495" x2="612" y2="495"/>
+    <line x1="434" y1="607" x2="612" y2="607"/>
+    <line x1="434" y1="719" x2="612" y2="719"/>
+  </g>
+  <g fill="#D97757">
+    <path d="M620,159 L611,154 L611,164 Z"/>
+    <path d="M620,271 L611,266 L611,276 Z"/>
+    <path d="M620,383 L611,378 L611,388 Z"/>
+    <path d="M620,495 L611,490 L611,500 Z"/>
+    <path d="M620,607 L611,602 L611,612 Z"/>
+    <path d="M620,719 L611,714 L611,724 Z"/>
+  </g>
+  <g font-family="'Helvetica Neue','Hiragino Sans','Yu Gothic',sans-serif" font-size="12" fill="#D97757" font-weight="700">
+    <text x="510" y="150" text-anchor="middle">はい</text>
+    <text x="510" y="262" text-anchor="middle">はい</text>
+    <text x="510" y="374" text-anchor="middle">はい</text>
+    <text x="510" y="486" text-anchor="middle">はい</text>
+    <text x="510" y="598" text-anchor="middle">はい</text>
+    <text x="510" y="710" text-anchor="middle">はい</text>
+  </g>
+
+  <!-- question nodes -->
+  <g font-family="'Helvetica Neue','Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif" font-size="16" font-weight="600">
+    <rect x="64" y="128" width="370" height="62" rx="12" fill="#232019" stroke="#41392F" stroke-width="1.5"/>
+    <text x="88" y="165" fill="#EAE2D6">ちょっとした質問・単一ファイル？</text>
+    <rect x="64" y="240" width="370" height="62" rx="12" fill="#232019" stroke="#41392F" stroke-width="1.5"/>
+    <text x="88" y="277" fill="#EAE2D6">大きい・リスクのある変更？</text>
+    <rect x="64" y="352" width="370" height="62" rx="12" fill="#232019" stroke="#41392F" stroke-width="1.5"/>
+    <text x="88" y="389" fill="#EAE2D6">難しい・曖昧な問題？</text>
+    <rect x="64" y="464" width="370" height="62" rx="12" fill="#232019" stroke="#41392F" stroke-width="1.5"/>
+    <text x="88" y="501" fill="#EAE2D6">定型作業 — 速さ重視？</text>
+    <rect x="64" y="576" width="370" height="62" rx="12" fill="#232019" stroke="#41392F" stroke-width="1.5"/>
+    <text x="88" y="613" fill="#EAE2D6">複数を同時に進める？</text>
+    <rect x="64" y="688" width="370" height="62" rx="12" fill="#232019" stroke="#41392F" stroke-width="1.5"/>
+    <text x="88" y="725" fill="#EAE2D6">CI・スクリプト実行？</text>
+  </g>
+
+  <!-- action nodes -->
+  <g font-family="'SF Mono','Cascadia Code',Menlo,'Hiragino Sans','Yu Gothic',monospace">
+    <rect x="620" y="128" width="516" height="62" rx="12" fill="#2A211B" stroke="#C56B4D" stroke-width="1.5"/>
+    <text x="644" y="155" font-size="15" fill="#EEC9B6">claude -p "query"</text>
+    <text x="644" y="178" font-size="12.5" fill="#9C8E80">一回実行して終了 — パイプに最適</text>
+
+    <rect x="620" y="240" width="516" height="62" rx="12" fill="#2A211B" stroke="#C56B4D" stroke-width="1.5"/>
+    <text x="644" y="267" font-size="15" fill="#EEC9B6">Shift+Tab → plan mode</text>
+    <text x="644" y="290" font-size="12.5" fill="#9C8E80">まず調査し、計画を確認してから実行</text>
+
+    <rect x="620" y="352" width="516" height="62" rx="12" fill="#2A211B" stroke="#C56B4D" stroke-width="1.5"/>
+    <text x="644" y="379" font-size="15" fill="#EEC9B6">--effort high·xhigh  /  /effort ultracode</text>
+    <text x="644" y="402" font-size="12.5" fill="#9C8E80">推論を増やす; ultracode は自動ワークフロー付き</text>
+
+    <rect x="620" y="464" width="516" height="62" rx="12" fill="#2A211B" stroke="#C56B4D" stroke-width="1.5"/>
+    <text x="644" y="491" font-size="15" fill="#EEC9B6">Alt+O  fast mode</text>
+    <text x="644" y="514" font-size="12.5" fill="#9C8E80">Opus を高速出力 — 同じモデルのまま速い</text>
+
+    <rect x="620" y="576" width="516" height="62" rx="12" fill="#2A211B" stroke="#C56B4D" stroke-width="1.5"/>
+    <text x="644" y="603" font-size="15" fill="#EEC9B6">claude --bg · -w worktree · /batch</text>
+    <text x="644" y="626" font-size="12.5" fill="#9C8E80">バックグラウンド &amp; 隔離された並列作業</text>
+
+    <rect x="620" y="688" width="516" height="62" rx="12" fill="#2A211B" stroke="#C56B4D" stroke-width="1.5"/>
+    <text x="644" y="715" font-size="15" fill="#EEC9B6">-p --output-format json · --bare</text>
+    <text x="644" y="738" font-size="12.5" fill="#9C8E80">構造化・最小・CI 向けに高速</text>
+  </g>
+
+  <text x="64" y="792" font-family="'SF Mono','Hiragino Sans',Menlo,monospace" font-size="13" fill="#8A8073">それ以外は — <tspan fill="#D97757">claude</tspan> を起動すればOK。どれも途中で切り替えられます。</text>
+</svg>
