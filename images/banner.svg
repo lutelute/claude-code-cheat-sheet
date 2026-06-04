@@ -1,0 +1,53 @@
+<svg width="1200" height="380" viewBox="0 0 1200 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Claude Code Cheat Sheet — powered by Opus 4.8">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#24221E"/>
+      <stop offset="0.55" stop-color="#1A1815"/>
+      <stop offset="1" stop-color="#121110"/>
+    </linearGradient>
+    <radialGradient id="sparkGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.45"/>
+      <stop offset="0.6" stop-color="#D97757" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cornerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- card -->
+  <rect x="1" y="1" width="1198" height="378" rx="20" fill="url(#bgGrad)" stroke="#39332D" stroke-width="1.5"/>
+  <circle cx="1040" cy="70" r="240" fill="url(#cornerGlow)"/>
+
+  <!-- window chrome -->
+  <circle cx="40" cy="36" r="6.5" fill="#E5664E"/>
+  <circle cx="64" cy="36" r="6.5" fill="#E0A23A"/>
+  <circle cx="88" cy="36" r="6.5" fill="#54B070"/>
+  <text x="112" y="41" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="13" fill="#6B635A">claude-code — cheat-sheet</text>
+
+  <!-- sparks -->
+  <circle cx="128" cy="208" r="74" fill="url(#sparkGlow)"/>
+  <path transform="translate(128,208)" d="M0,-46 C6,-6 6,-6 46,0 C6,6 6,6 0,46 C-6,6 -6,6 -46,0 C-6,-6 -6,-6 0,-46 Z" fill="#D97757"/>
+  <path transform="translate(200,118)" d="M0,-15 C2,-2 2,-2 15,0 C2,2 2,2 0,15 C-2,2 -2,2 -15,0 C-2,-2 -2,-2 0,-15 Z" fill="#D97757" opacity="0.9"/>
+  <path transform="translate(86,300)" d="M0,-11 C1.6,-1.6 1.6,-1.6 11,0 C1.6,1.6 1.6,1.6 0,11 C-1.6,1.6 -1.6,1.6 -11,0 C-1.6,-1.6 -1.6,-1.6 0,-11 Z" fill="#D97757" opacity="0.65"/>
+
+  <!-- title -->
+  <text x="212" y="180" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="-1.5" fill="#F4EFE8">Claude Code</text>
+  <text x="212" y="252" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="-1.5" fill="#D97757">Cheat Sheet</text>
+  <text x="214" y="296" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="20" font-weight="500" fill="#ADA399">Master every command, flag &amp; shortcut — from zero to power user.</text>
+
+  <!-- prompt line -->
+  <text x="214" y="344" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="17" fill="#C9B7A8"><tspan fill="#7C7368">$ </tspan>claude --model opus --effort high</text>
+  <rect x="574" y="330" width="10" height="18" rx="1.5" fill="#D97757"/>
+
+  <!-- badges -->
+  <rect x="1012" y="34" width="156" height="40" rx="20" fill="#D97757"/>
+  <text x="1090" y="60" text-anchor="middle" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="0.5" fill="#1B1410">OPUS 4.8</text>
+
+  <rect x="1012" y="84" width="156" height="40" rx="20" fill="none" stroke="#4D463E" stroke-width="1.5"/>
+  <text x="1090" y="110" text-anchor="middle" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="0.5" fill="#B7ACA0">CLI v2.1+</text>
+
+  <rect x="1012" y="134" width="156" height="40" rx="20" fill="none" stroke="#4D463E" stroke-width="1.5"/>
+  <text x="1090" y="160" text-anchor="middle" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" letter-spacing="0.5" fill="#B7ACA0">70+ COMMANDS</text>
+</svg>
