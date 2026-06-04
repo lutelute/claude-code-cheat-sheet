@@ -17,9 +17,21 @@
   <img src="https://img.shields.io/badge/PRs-welcome-D97757?style=flat-square" alt="PRs welcome">
 </p>
 
+<p align="center">
+  <b>English</b> &nbsp;·&nbsp; <a href="README.ja.md">日本語</a>
+</p>
+
 ---
 
 > **Why this cheat sheet?** Claude Code moves fast, and a lot of guides online still reference flags that never existed or models that have since been retired. Every command, flag, and shortcut here was verified against `claude --help` (v2.1.x) and the official docs. If a command isn't real, it isn't in here.
+
+## 📄 One-Page Cheat Sheet
+
+<p align="center">
+  <img src="images/cheatsheet-poster.svg" alt="Claude Code one-page cheat sheet — 12 categories of commands" width="100%">
+</p>
+
+<p align="center"><sub>The whole CLI at a glance. Prefer text, or want to copy a command? Everything is searchable below. ↓</sub></p>
 
 ## 📚 Table of Contents
 
@@ -36,7 +48,9 @@
 | ⚪ [**Level 9**](#-level-9-parallel--background) | Parallel & background — agents, worktrees, `/batch` | |
 | 🔘 [**Level 10**](#-level-10-teams--production) | Teams & production — settings, tokens, schedules | power user |
 
+**Visual:** [📄 One-Page Cheat Sheet](#-one-page-cheat-sheet) · [🧭 Decision Guide](#-which-mode-should-i-use)
 **Reference:** [CLI Commands](#cli-commands) · [CLI Flags](#cli-flags) · [Slash Commands](#slash-commands) · [Keyboard Shortcuts](#keyboard-shortcuts) · [Vim Mode](#vim-mode)
+**Deep dives:** [🍳 Recipes](#-recipes) · [🧠 CLAUDE.md](#-writing-a-great-claudemd) · [🔧 settings.json](#-settingsjson-reference) · [🪝 Hooks](#-hooks) · [🔌 MCP](#-mcp-setup) · [🌱 Env vars](#-environment-variables) · [✨ Hidden Gems](#-hidden-gems) · [❓ FAQ](#-faq)
 **More:** [🤖 Subagents](subagents.md) · [💡 Best Practices](#-best-practices) · [🧰 Troubleshooting](#-troubleshooting)
 
 ---
@@ -516,6 +530,16 @@ claude install stable           # (re)install a specific native build
 
 ---
 
+## 🧭 Which Mode Should I Use?
+
+Not sure how to approach a task? This picks the right mode, model, and effort at a glance — and you can switch any of them mid-session.
+
+<p align="center">
+  <img src="images/decision-flowchart.svg" alt="Decision flowchart: which Claude Code mode, model, and effort to use" width="100%">
+</p>
+
+---
+
 ## 📋 Reference Tables
 
 ### CLI Commands
@@ -637,6 +661,232 @@ Enable via `/config` → Editor mode. Highlights:
 | `v` `V` | Visual / line-visual selection |
 
 > At the top/bottom of the input, `j`/`k` navigate prompt history instead of moving the cursor.
+
+---
+
+## 🍳 Recipes
+
+Battle-tested starting points. The `claude -p …` lines run from your shell; the rest are prompts to type in a session.
+
+**Review & ship**
+```bash
+git diff | claude -p "review this diff for bugs and security issues"   # pre-commit gut check
+claude -p "/review 123"          # review PR #123 locally
+claude -p "/security-review"     # security pass on the current branch
+```
+
+**Tests & debugging**
+```text
+write tests for src/auth.ts — cover the error paths, then run them
+this test is flaky — find the race and make it deterministic
+reproduce the bug in issue #42, then fix the root cause
+```
+
+**Understand a codebase**
+```text
+/init                                       ← generate a CLAUDE.md for this repo
+explain how a request flows from the router to the database
+where is rate limiting implemented? show me the call sites
+```
+
+**Refactor & migrate**
+```text
+extract the duplicated validation in these 3 files into one helper
+migrate this module from JavaScript to TypeScript, keep behavior identical
+/batch migrate every component in src/ from class to function components
+```
+
+**Git & history**
+```bash
+claude -p "write a conventional-commit message for the staged changes"
+git log --oneline -20 | claude -p "draft release notes grouped by feat/fix"
+```
+
+---
+
+## 🧠 Writing a Great CLAUDE.md
+
+`CLAUDE.md` loads every session, so it's the highest-leverage file in your repo. Keep it short and factual.
+
+| ✅ Put in it | 🚫 Keep out |
+|:--|:--|
+| How to run, build, test (`npm test`, not "the tests") | Anything obvious from the code |
+| Project conventions ("use X, never Y") | Long prose — prefer terse bullets |
+| Architecture in 3–5 lines: where things live | Secrets or tokens |
+| Gotchas that bite newcomers | Generic advice |
+
+```text
+/init        generate a starter file from the repo
+/memory      edit it (or any memory file)
+#            prefix a prompt with # to append a one-line fact
+```
+
+> Layer it: `~/.claude/CLAUDE.md` (you, everywhere) → `./CLAUDE.md` (team, committed) → `./CLAUDE.local.md` (you, this repo, git-ignored).
+
+---
+
+## 🔧 settings.json Reference
+
+Configure Claude Code via JSON. Precedence (later wins): **user** `~/.claude/settings.json` → **project** `.claude/settings.json` → **local** `.claude/settings.local.json` → CLI flags → **managed** (enterprise, locked). Add `"$schema"` for editor autocomplete.
+
+| Key | What it does |
+|:--|:--|
+| `model` | Default model (e.g. `"opus"`) |
+| `effortLevel` | Persist effort: `low`·`medium`·`high`·`xhigh` |
+| `permissions` | `allow` / `ask` / `deny` rule arrays (see below) |
+| `env` | Env vars injected into every session & subprocess |
+| `hooks` | Run commands on lifecycle events (see below) |
+| `statusLine` | Custom status-line command |
+| `outputStyle` | System-prompt style (e.g. `"Explanatory"`) |
+| `editorMode` | `"normal"` or `"vim"` |
+| `autoUpdatesChannel` | `"stable"` or `"latest"` |
+| `cleanupPeriodDays` | Days to keep old sessions (default `30`) |
+| `attribution` | Customize the git commit / PR co-author trailer |
+| `availableModels` | Restrict the `/model` picker |
+| `language` | Preferred response language (e.g. `"japanese"`) |
+
+```json
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "opus",
+  "effortLevel": "high",
+  "permissions": {
+    "allow": ["Bash(npm run test:*)", "Read(./src/**)"],
+    "deny": ["Read(./.env)", "Read(./.env.*)", "Bash(curl:*)"]
+  },
+  "env": { "BASH_DEFAULT_TIMEOUT_MS": "300000" }
+}
+```
+
+---
+
+## 🔑 Permission Rule Syntax
+
+Rules are `Tool(pattern)`. **Deny** beats **ask** beats **allow**, and rules merge across scopes.
+
+```text
+Bash(npm run test:*)     allow any "npm run test…" command
+Bash(git:*)              allow all git subcommands
+Read(./src/**)           allow reading anything under src/
+Read(./.env)             deny reading the env file
+Edit                     a bare tool name matches every call
+```
+
+Set them interactively with `/permissions`, or per-run with `--allowedTools` / `--disallowedTools`.
+
+---
+
+## 🪝 Hooks
+
+Run your own shell command (or HTTP / MCP / prompt) on lifecycle events. Configure under `hooks` in `settings.json`; view with `/hooks`.
+
+| Event | Fires… |
+|:--|:--|
+| `SessionStart` | a session starts or resumes |
+| `UserPromptSubmit` | you submit a prompt (can rewrite or block it) |
+| `PreToolUse` | before a tool runs — **can block it** |
+| `PostToolUse` | after a tool succeeds |
+| `PreCompact` / `PostCompact` | around context compaction |
+| `SubagentStart` / `SubagentStop` | around subagent runs |
+| `Stop` | Claude finishes responding |
+| `Notification` | Claude Code notifies you |
+| `SessionEnd` | the session ends |
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [{ "type": "command", "command": "npm run lint --silent" }]
+      }
+    ]
+  }
+}
+```
+
+> Exit code **`2`** from a `PreToolUse` command blocks the action and feeds stderr back to Claude — handy for guardrails.
+
+---
+
+## 🔌 MCP Setup
+
+Connect external tools (databases, browsers, issue trackers…) via the Model Context Protocol.
+
+```bash
+# Local (stdio) server
+claude mcp add github -- npx -y @modelcontextprotocol/server-github
+
+# Remote SSE / HTTP server
+claude mcp add --transport sse linear https://mcp.linear.app/sse
+
+# Manage
+claude mcp list
+claude mcp get github
+claude mcp remove github
+```
+
+```text
+/mcp     authenticate, inspect, and manage servers in-session
+```
+
+Pick a scope with `--scope local|project|user`. Project-scoped servers live in `.mcp.json` (commit to share). Servers can expose **prompts** as `/mcp__<server>__<prompt>` and **resources** you can `@`-mention.
+
+---
+
+## 🌱 Environment Variables
+
+| Variable | Purpose |
+|:--|:--|
+| `ANTHROPIC_API_KEY` | API key (Console billing instead of a subscription) |
+| `CLAUDE_CODE_OAUTH_TOKEN` | Long-lived token for CI (from `claude setup-token`) |
+| `ANTHROPIC_MODEL` | Default model id |
+| `CLAUDE_CODE_EFFORT_LEVEL` | `low`·`medium`·`high`·`xhigh`·`max`·`auto` |
+| `MAX_THINKING_TOKENS` | Budget for extended thinking |
+| `BASH_DEFAULT_TIMEOUT_MS` | Default bash timeout (ms) |
+| `CLAUDE_CODE_USE_BEDROCK` / `CLAUDE_CODE_USE_VERTEX` | Route through AWS Bedrock / Google Vertex |
+| `DISABLE_TELEMETRY` | Opt out of telemetry |
+| `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` | Turn off background bash |
+
+Set these in your shell, or per-project under the `env` key in `settings.json`.
+
+---
+
+## ✨ Hidden Gems
+
+Small features that punch above their weight:
+
+| Do this | Get this |
+|:--|:--|
+| `/btw <q>` | Ask a side question — answered from context, never added to history |
+| `/rewind` (or `Esc` `Esc`) | Roll back code and/or conversation to any earlier point |
+| `/copy [N]` | Copy Claude's last (or Nth-latest) reply, or pick a single code block |
+| `/goal <condition>` | Keep working across turns until a condition is met |
+| `Tab` on a suggestion | Accept the greyed-out next-step suggestion |
+| `Ctrl+T` | Toggle the live task list |
+| `Ctrl+B` | Background a long-running bash command |
+| `! cmd` | Run a shell command and add its output to context (`Tab` autocompletes) |
+| `Ctrl+G` | Edit your prompt in `$EDITOR` |
+| `/context all` | See exactly what's filling the window, item by item |
+| `/insights` · `/recap` | Session analytics · one-line "what happened" summary |
+
+---
+
+## ❓ FAQ
+
+**Which model should I use?** `opus` for hard reasoning and big refactors; `sonnet` for everyday speed. Pin `claude-opus-4-8` for reproducibility.
+
+**`-p` vs interactive?** Use `-p` for one-shot, scriptable answers and pipes. Use the interactive REPL for anything iterative.
+
+**It asks permission for everything.** Allowlist safe tools with `/permissions` or `--allowedTools "Bash(git:*)"`, or cycle to `acceptEdits` with `Shift+Tab`.
+
+**The context window filled up.** `/compact` to summarize and keep going, or `/clear` to reset between unrelated tasks. `/context` shows what's eating it.
+
+**Did Claude break my files?** No — it checkpoints before edits. `Esc` `Esc` → rewind, or `/rewind`.
+
+**How do I run it in CI?** `claude setup-token` → set `CLAUDE_CODE_OAUTH_TOKEN` → `claude -p --output-format json`.
+
+**Is the npm package still supported?** Prefer the native installer. If you used npm: `npm uninstall -g @anthropic-ai/claude-code`, then reinstall natively.
 
 ---
 

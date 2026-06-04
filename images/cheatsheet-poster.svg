@@ -1,0 +1,155 @@
+<svg width="1406" height="1062" viewBox="0 0 1406 1062" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Claude Code one-page cheat sheet">
+  <defs>
+    <linearGradient id="pBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#201E1A"/>
+      <stop offset="0.6" stop-color="#181612"/>
+      <stop offset="1" stop-color="#121110"/>
+    </linearGradient>
+    <radialGradient id="pGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1406" height="1062" fill="url(#pBg)"/>
+  <circle cx="1180" cy="40" r="320" fill="url(#pGlow)"/>
+
+  <!-- header -->
+  <path transform="translate(60,72)" d="M0,-26 C3.6,-3.6 3.6,-3.6 26,0 C3.6,3.6 3.6,3.6 0,26 C-3.6,3.6 -3.6,3.6 -26,0 C-3.6,-3.6 -3.6,-3.6 0,-26 Z" fill="#D97757"/>
+  <text x="104" y="66" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="42" font-weight="800" letter-spacing="-1"><tspan fill="#F4EFE8">Claude Code </tspan><tspan fill="#D97757">Cheat Sheet</tspan></text>
+  <text x="106" y="104" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="18" font-weight="500" fill="#A99F94">Every command at a glance — Opus 4.8 · CLI v2.1+ · verified against claude --help</text>
+  <rect x="1228" y="44" width="148" height="40" rx="20" fill="#D97757"/>
+  <text x="1302" y="70" text-anchor="middle" font-family="'Helvetica Neue','Segoe UI',Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="0.5" fill="#1B1410">OPUS 4.8</text>
+  <line x1="60" y1="134" x2="1346" y2="134" stroke="#332C26" stroke-width="1.5"/>
+
+  <!-- ============ ROW 1 (y=158) ============ -->
+  <g transform="translate(30,158)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">01</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">GET STARTED</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude · claude "task"</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude -p "query"   (run &amp; exit)</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude -c · -r &lt;name&gt;</text>
+  </g>
+  <g transform="translate(488,158)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">02</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">NAVIGATE</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/help · /status · /context</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/clear · /compact</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/config · /doctor</text>
+  </g>
+  <g transform="translate(946,158)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">03</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">SHORTCUTS</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>Esc interrupt · EscEsc rewind</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>Shift+Tab modes · Ctrl+O log</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>@ file · ! shell · # memory</text>
+  </g>
+
+  <!-- ============ ROW 2 (y=381) ============ -->
+  <g transform="translate(30,381)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">04</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">MODEL &amp; THINKING</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>--model opus | claude-opus-4-8</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>--effort high · max · ultracode</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>Alt+O fast · Alt+T thinking</text>
+  </g>
+  <g transform="translate(488,381)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">05</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">PERMISSIONS</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>Shift+Tab: default→accept→plan</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>--allowedTools / --disallowedTools</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/permissions · plan mode</text>
+  </g>
+  <g transform="translate(946,381)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">06</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">MEMORY &amp; CONTEXT</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/init → CLAUDE.md · /memory</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan># add a fact to memory</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/context · /compact · /clear</text>
+  </g>
+
+  <!-- ============ ROW 3 (y=604) ============ -->
+  <g transform="translate(30,604)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">07</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">CUSTOMIZE</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/agents   subagents</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/skills · .claude/commands/</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/hooks   lifecycle events</text>
+  </g>
+  <g transform="translate(488,604)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">08</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">MCP &amp; IDE</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude mcp · /mcp</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>--ide · --chrome</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/plugin · claude plugin install</text>
+  </g>
+  <g transform="translate(946,604)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">09</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">HEADLESS</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>-p --output-format json</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>--max-turns N · --max-budget-usd</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>--json-schema · --bare</text>
+  </g>
+
+  <!-- ============ ROW 4 (y=827) ============ -->
+  <g transform="translate(30,827)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">10</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">PARALLEL &amp; BG</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude --bg · claude agents</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>-w &lt;name&gt;   git worktree</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/batch · /workflows</text>
+  </g>
+  <g transform="translate(488,827)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">11</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">TEAMS &amp; PROD</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude setup-token   (CI)</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>--settings · --setting-sources</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>/schedule · GitHub Actions</text>
+  </g>
+  <g transform="translate(946,827)" font-family="'SF Mono','Cascadia Code',Menlo,Consolas,monospace">
+    <rect width="430" height="195" rx="14" fill="#221E19" stroke="#38312A"/>
+    <text x="406" y="46" text-anchor="end" font-size="38" font-weight="800" fill="#D97757" opacity="0.20">12</text>
+    <path transform="translate(30,34)" d="M0,-9 C1.3,-1.3 1.3,-1.3 9,0 C1.3,1.3 1.3,1.3 0,9 C-1.3,1.3 -1.3,1.3 -9,0 C-1.3,-1.3 -1.3,-1.3 0,-9 Z" fill="#D97757"/>
+    <text x="50" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#EDE6DB">TROUBLESHOOT</text>
+    <line x1="20" y1="58" x2="410" y2="58" stroke="#322B25"/>
+    <text x="24" y="92" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude doctor · update</text>
+    <text x="24" y="124" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>claude install stable</text>
+    <text x="24" y="156" font-size="13.5" fill="#C2B6A6"><tspan fill="#D97757">› </tspan>-p --fallback-model sonnet</text>
+  </g>
+
+  <!-- footer -->
+  <text x="703" y="1048" text-anchor="middle" font-family="'SF Mono',Menlo,monospace" font-size="13" fill="#6F665C">Claude Code Cheat Sheet · MIT · github.com/lutelute/claude-code-cheat-sheet</text>
+</svg>

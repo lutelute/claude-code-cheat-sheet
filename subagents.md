@@ -9,7 +9,7 @@
   Specialized agents with their own context window, tools, and system prompt — Claude delegates the right work to the right agent automatically.
 </p>
 
-<p align="center"><a href="README.md">← Back to the Cheat Sheet</a></p>
+<p align="center"><a href="README.md">← Back to the Cheat Sheet</a> &nbsp;·&nbsp; <a href="subagents.ja.md">日本語</a></p>
 
 ---
 
@@ -98,4 +98,4 @@ claude --agents '{
 - **Match the model to the task.** Heavy reasoning (security, architecture) → `opus`; routine work → `sonnet`; cheap/fast → `haiku`.
 - **End with an output contract.** Tell the agent exactly how to format its findings so its handback is easy to act on.
 
-<p align="center"><a href="README.md">← Back to the Cheat Sheet</a></p>
+<p align="center"><a href="README.md">← Back to the Cheat Sheet</a> &nbsp;·&nbsp; <a href="subagents.ja.md">日本語</a></p>
